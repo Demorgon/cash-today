@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cash today</title>
+    <meta name="description" content="Cash today site.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700,800" rel="stylesheet">
+    <script>
+    </script>
+</head>
+
+<body>
+    <section class="nav_section">
+        <nav class="nav_container row">
+            <div class="nav_item row">
+                <div class="nav_item_logo">
+                    <img src="./img/logo.png" alt="">
+                </div>
+                <div class="nav_item_name column">
+                    <p class="f32 bold blue logo_font">cash today</p>
+                    <p class="f13 bold logo_small_font">кредит без турбот</p>
+                </div>
+            </div>
+            <div class="nav_item">
+                <a href="">Как получить кредит</a>
+            </div>
+            <div class="nav_item">
+                <a href="">Как вернуть кредит</a>
+            </div>
+            <div class="nav_item">
+                <a href="">Вопросы и ответы</a>
+            </div>
+            <div class="nav_item column">
+                <p class="f18 bold">0 (800) 210-365</p>
+                <p class="f12">звонок бесплатный</p>
+            </div>
+            <div class="nav_item">
+                <div class="nav_item_button row">
+                    <div class="button_icon white"><i class="fas fa-user fa-sm"></i></div>
+                    <p class="white">Войти</p>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!--    -->
+    <section class="credit_section">
+        <div class="credit_app">
+            <header class="credit_title">
+                <h1 class="semibold">Онлайн кредит на карту <span class="blue">за 5 минут!</span></h1>
+            </header>
+            <div class="app_container row">
+                <div class="app_item">
+                    <div class="credit_controler_container column">
+                        <div class="credit_controler_item column">
+                            <div class="info_title">
+                                <p>Сколько Вы хотите получить:</p>
+                            </div>
+                            <div class="range_container">
+                                <div class="range_wrapper">
+                                    <input type="range" min="500" max="10000" step="50" value="7000" class="credit_range" oninput="dataGathering()" id="credit_range">
+                                    <div class="range_money_info row">
+                                        <p>500 грн</p>
+                                        <p>10 000 грн</p>
+                                    </div>
+                                </div>
+                                <div class="range_value_container row">
+                                    <input type="number" class="range_value_item row bold" step="50" min="500" max="10000" value="7000" id="credit_text" onchange="valueChange()">
+                                    <div class="units_wrapper">
+                                        <p class="f12">грн</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="credit_controler_item column">
+                            <div class="info_title">
+                                <p>На какой срок:</p>
+                            </div>
+                            <div class="range_container">
+                                <div class="range_wrapper">
+                                    <input type="range" min="7" max="30" step="1" value="7" class="credit_range" oninput="dataGathering()" id="days_range">
+                                    <div class="range_money_info row">
+                                        <p>7 дней</p>
+                                        <p>30 дней</p>
+                                    </div>
+                                </div>
+                                <div class="range_value_container row">
+                                    <input type="number" class="range_value_item row bold" value="7" step="1" min="7" max="30" id="days_text" onchange="valueChange()">
+                                    <div class="units_wrapper">
+                                        <p class="f12">дней</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app_item column semibold f18">
+                    <div class="info column">
+                        <div class="info_title bold">
+                            <p>Информация о кредите:</p>
+                        </div>
+                        <div class="info_container">
+                            <div class="info_item row">
+                                <p>Вы берете:</p>
+                                <p class="bold" id="cash_input">7000 грн</p>
+                            </div>
+                            <div class="info_item row">
+                                <p>Дата возврата:</p>
+                                <p class="bold" id="pay_day">22.4.2017</p>
+                            </div>
+                            <div class="info_item row">
+                                <p>К возврату:</p>
+                                <p class="bold" id="cash_output">7780 грн</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info column semibold f18">
+                        <div class="info_title bold">
+                            <p>Стоимость продления:</p>
+                        </div>
+                        <div class="info_container">
+                            <div class="info_item row">
+                                <p>7 дней</p>
+                                <p class="bold blue" id="7day">223 грн</p>
+                            </div>
+                            <div class="info_item row">
+                                <p>15 дней</p>
+                                <p class="bold blue" id="15day">581 грн</p>
+                            </div>
+                            <div class="info_item row">
+                                <p>30 дней</p>
+                                <p class="bold blue" id="30day">983 грн</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app_button_wrapper row">
+                        <div class="app_button white row">
+                            <p>Оформить кредит</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    -->
+    <section class="requirements_section">
+        <header class="question_container">
+            <div class="requirements_question_wrapper">
+                <div class="question">
+                    <h1 class="f28 bold">Кто может получить кредит?</h1>
+                </div>
+            </div>
+        </header>
+        <div class="requirements_container row ls20">
+            <figure class="requirements_item column">
+                <div class="requirements_item_icon"><img src="./img/18.png" alt="18+.ico"></div>
+                <figcaption class="requirements_item_text f18">Вам исполнилось 18 лет</figcaption>
+            </figure>
+            <figure class="requirements_item column">
+                <div class="requirements_item_icon"><img src="./img/pasport.png" alt="Passport.ico"></div>
+                <figcaption class="requirements_item_text f18">Вы гражданин</figcaption>
+            </figure>
+            <figure class="requirements_item column">
+                <div class="requirements_item_icon"><img src="./img/card.png" alt="Card.ico"></div>
+                <figcaption class="requirements_item_text f18">У вас есть банковская карта</figcaption>
+            </figure>
+        </div>
+    </section>
+    <!---->
+    <section class="client_section">
+        <header class="question_container">
+            <div class="client_question_wrapper">
+                <div class="question">
+                    <h1 class="f28 bold">Взять кредит в Cashtoday?</h1>
+                </div>
+            </div>
+        </header>
+        <div class="client_container row">
+            <div class="client_item">
+                <div class="client_item_title">
+                    <h2 class="f24 bold">Новый клиент</h2>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="client_item blue">
+                <div class="client_item_title">
+                    <h2 class="f24 bold">Постоянный клиент</h2>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+                <div class="advantage_container row">
+                    <div class="advantage_icon"><img src="./img/advantage_icon.png" alt="icon"></div>
+                    <div class="advantage_text">
+                        <p class="f18">Длинное преимущество 1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="green_button">
+            <p>Получить сейчас</p>
+        </div>
+    </section>
+    <!---->
+    <section class="steps_section">
+        <header class="question_container">
+            <div class="steps_question_wrapper">
+                <div class="question">
+                    <h1 class="f28 bold">Как получить кредит?</h1>
+                </div>
+            </div>
+        </header>
+        <div class="steps_container row ls20">
+            <figure class="steps_item">
+                <div class="steps_item_icon">
+                    <img src="./img/man.png" alt="">
+                </div>
+                <div class="steps_item_title">
+                    <p class="f20 bold">Все онлайн</p>
+                </div>
+                <div>
+                    <p class="f15">Не нужно отходить от компьютера и посещать банк</p>
+                </div>
+            </figure>
+            <figure class="steps_item">
+                <div class="steps_item_icon">
+                    <img src="./img/arrow.png" alt="">
+                </div>
+            </figure>
+            <figure class="steps_item">
+                <div class="steps_item_icon">
+                    <img src="./img/credit_5_minute.png" alt="">
+                </div>
+                <div class="steps_item_title">
+                    <p class="f20 bold">Кредит за 5 минут</p>
+                </div>
+                <div>
+                    <p class="f15">Решение принимается за 5 минут и деньги сразу поступают на Вашу карту</p>
+                </div>
+            </figure>
+            <figure class="steps_item">
+                <div class="steps_item_icon">
+                    <img src="./img/arrow.png" alt="">
+                </div>
+            </figure>
+            <figure class="steps_item">
+                <div class="steps_item_icon">
+                    <img src="./img/passport_&_code.png" alt="">
+                </div>
+                <div class="steps_item_title">
+                    <p class="f20 bold">Только паспот и код</p>
+                </div>
+                <div>
+                    <p class="f15">Не нужно приносить и заполнять целую гору документов </p>
+                </div>
+            </figure>
+        </div>
+        <article class="slogan ls20">
+            <p class="f36">Просто попробуйте один раз — и лично убедитесь, <span>насколько это быстро и удобно!</span></p>
+        </article>
+        <div class="green_button">
+            <p>Получить сейчас</p>
+        </div>
+    </section>
+    <!---->
+    <section class="video_section">
+        <div class="video_container">
+            <div class="video_button"></div>
+            <article class="video_text">
+                <p class="white semibold ls50">Посмотрите это короткое видео о том, как <br> работает сервис Cash today </p>
+            </article>
+            <div class="video_background"></div>
+        </div>
+    </section>
+    <!---->
+    <section class="mail_section">
+        <div class="mail_wrapper">
+            <div class="mail_container">
+                <header class="mail_title">
+                    <h1 class="semibold">Подписаться на рассылку</h1>
+                </header>
+                <div class="input_container row">
+                    <input type="text" placeholder="Укажите email" class="mail_input f24">
+                    <div class="mail_button"><img src="./img/mail_check.png" alt=""></div>
+                </div>
+                <div class="mail_text">
+                    <p>Никакого спама. Только актуальные новости и предложения.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <section class="map_section">
+        <div class="map_container row ls50">
+            <div class="map_item white">
+                <div class="map_item_title semibold">
+                    <h3 class="f24">Как это работает</h3>
+                </div>
+                <nav class="map_nav column">
+                    <a href="" class="f18">Как взять кредит</a>
+                    <a href="" class="f18">Бонусная программа</a>
+                    <a href="" class="f18">Блог</a>
+                    <a href="" class="f18">О нас</a>
+                </nav>
+
+            </div>
+            <div class="map_item white">
+                <div class="map_item_title semibold">
+                    <h3 class="f24">Как вернуть кредит</h3>
+                </div>
+                <nav class="map_nav column">
+                    <a href="" class="f18">В личном кабинете</a>
+                    <a href="" class="f18">В терминале</a>
+                    <a href="" class="f18">В кассе банка</a>
+                    <a href="" class="f18">Продлить кредит</a>
+                </nav>
+            </div>
+            <div class="map_item white">
+                <div class="map_item_title semibold">
+                    <h3 class="f24">О нас</h3>
+                </div>
+                <nav class="map_nav column">
+                    <a href="" class="f18">О сервисе redit365</a>
+                    <a href="" class="f18">Контакты и реквизиты</a>
+                    <a href="" class="f18">Документы</a>
+                    <a href="" class="f18">Карта сайта</a>
+                </nav>
+            </div>
+            <div class="number_container white ls50">
+                <div class="number_item">
+                    <p class="f24">0 800 214 111</p>
+                    <p class="f14" style="line-height: 0.5">Звонок бесплатный</p>
+                </div>
+                <div class="number_item row">
+                    <div class="number_icon"><img src="./img/life_icon.png" alt="life"></div>
+                    <p class="f24">073 369 41 11</p>
+                </div>
+                <div class="number_item row">
+                    <div class="number_icon"><img src="./img/kyivstar_icon.png" alt="kyivstar"></div>
+                    <p class="f24">067 369 41 11</p>
+                </div>
+                <div class="number_item row">
+                    <div class="number_icon"><img src="./img/vodafone.png" alt="vodafone"></div>
+                    <p class="f24">050 369 41 11</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="small_text white ls50">
+            <p class="f13">© 2013 - 2017 Все права защищены! Торговая марка Credit365. Финансовый оператор ООО "АИА ФИНАНС ГРУП". Лицензия выдана<br> Национальной комиссией осуществляющей государственное регулирование в сфере рынков финансовых услуг 18.05.2017 (бессрочная).</p>
+        </footer>
+    </section>
+    <!--    -->
+    <section class="social_section">
+        <div class="social_container row">
+            <div class="payment_container row">
+                <div class="payment_item row">
+                    <div class="nav_item_logo">
+                        <img src="./img/logo_white.png" alt="logo">
+                    </div>
+                    <div class="nav_item_name column">
+                        <p class="f40 bold white logo_font">cash today</p>
+                        <p class="f20 bold logo_small_font">кредит без турбот</p>
+                    </div>
+                </div>
+                <div class="payment_item row">
+                    <div class="payment_icon">
+                        <img src="./img/lock_icon.png" alt="lock">
+                    </div>
+                </div>
+                <div class="payment_item row">
+                    <div class="payment_icon">
+                        <img src="./img/visa_icon.png" alt="visa">
+                    </div>
+                </div>
+                <div class="payment_item row">
+                    <div class="payment_icon">
+                        <img src="./img/master_card_icon.png" alt="master card">
+                    </div>
+                </div>
+            </div>
+            <nav class="media_container white">
+                <div class="media_item row">
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="media_item  row">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="media_item  row">
+                    <a href="https://plus.google.com/discover"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!--    -->
+    <section class="contact_section">
+        <div class="contact_container ls20">
+            <div class="contact_item">
+                <div class="contact_item_title">
+                    <h3 class="italic_bold f18">Контактная информация</h3>
+                </div>
+                <article class="contact_item_text italic f18">
+                    <p>ООО “АИА ФИНАНС ГРУПП”. Местонахождение: ул. Михайловская 15/1 лит. Б, Киев, 01001.. Свидетельство о регистрации финансового учреждения ФК №877. Пример расчета годовой процентной ставки: сумма кредита – 1000 грн; срок кредита - 7 дней; общая сумма (основная сумма и проценты), которую необходимо будет оплатить – 1069 грн. <br>APR - 357,7%.
+                    </p>
+                </article>
+            </div>
+            <div class="contact_item">
+                <div class="contact_item_title">
+                    <h3 class="italic_bold f18">Финансовая ответственность</h3>
+                </div>
+                <article class="contact_item_text italic f18">
+                    <p>В случае невыполнения заемщиком своих обязательств, может быть начат процесс взыскания долга, и право взыскания может быть передано третьим лицам, что негативно отразится на кредитной истории заемщика и возможно, на его кредитном рейтинге. В случае просрочки платежа или непродления заемщиком срока предоставления кредита, со дня, следующего за днем окончания срока возврата кредита, проценты за пользование кредитом насчитываются в размере 1,5% от общей суммы кредита, до момента фактического возврата кредита.</p>
+                </article>
+            </div>
+            <div class="contact_item">
+                <div class="contact_item_title italic_bold f18">
+                    <h3>Продление срока пользования кредитом</h3>
+                </div>
+                <article class="contact_item_text italic f18">
+                    <p>Заёмщик может неограниченное количество раз продлевать кредит (устанавливать новую дату возврата кредита), оплатив комиссию в установленном Офертой размере.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
