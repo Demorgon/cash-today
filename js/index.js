@@ -9,7 +9,6 @@ function dataGathering() {
 
     creditValue(credit_value, days_value);
     daysValue(days_value);
-//    fillLower();
 }
 
 function creditValue(cash, days) {
@@ -68,9 +67,3 @@ function valueChange() {
     days_value.value = days_text * 1;
     dataGathering();
 }
-
-//function fillLower() {
-//    $('.range_wrapper input').on('input', function () {
-//        $(this).css('background', 'linear-gradient(to right, blue 0%, blue ' + this.value + '%, white ' + this.value * 100) / 25) + '%, white 100%)');
-//    });
-//}
